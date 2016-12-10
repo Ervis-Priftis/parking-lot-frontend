@@ -11,22 +11,35 @@ function MainController($auth, $state, $rootScope) {
   function logout() {
     $auth.logout()
     .then(() => {
-      $state.go('usersIndex');
+      $state.go('home');
     });
   }
+  // Ask Mike for seccont explanation
+  // -------------------------------->
+  const unprotectedStates = ['home', 'register', 'login'];
+  let attemptedRoute = null;
 
-  const protectedState = ['userEdit'];
-
-  function secureState(e, toState) {
-    // console.log(toState);
+  function secureState(e, toState, toParams, fromState) {
     main.message = null;
-    if(!$auth.isAuthenticated() && protectedState.includes(toState.name)) {
+
+    if($auth.isAuthenticated() && attemptedRoute === 'spacesIndex' && toState.name === 'userProfile') {
+      e.preventDefault();
+      $state.go(attemptedRoute);
+      // console.log(attemptedRoute);
+      attemptedRoute = null;
+    }
+
+    if(!$auth.isAuthenticated() && !unprotectedStates.includes(toState.name)) {
+
+      if(fromState.name === 'home') attemptedRoute = toState.name;
+      // console.log(attemptedRoute);
+
       e.preventDefault();
       $state.go('login');
       main.message = 'You must be logged in to go there!';
     }
   }
-
+// <-----------------------------------
   $rootScope.$on('$stateChangeStart', secureState);
 
   main.logout = logout;

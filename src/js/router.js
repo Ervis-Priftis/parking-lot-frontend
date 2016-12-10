@@ -4,18 +4,17 @@ angular.module('finalProject')
 Router.$inject = ['$stateProvider', '$urlRouterProvider'];
 function Router($stateProvider, $urlRouterProvider) {
   $stateProvider
-  .state('usersIndex', {
-    url: '/users',
-    templateUrl: '/templates/usersIndex.html',
-    controller: 'UsersIndexController as usersIndex'
+  .state('home', {
+    url: '/',
+    templateUrl: '/templates/landingPage.html'
   })
-  .state('usersShow', {
-    url: '/users/:id',
-    templateUrl: '/templates/usersShow.html',
-    controller: 'UsersShowController as show'
+  .state('userProfile', {
+    url: '/profile',
+    templateUrl: '/templates/userProfile.html',
+    controller: 'UserProfileController as userProfile'
   })
   .state('usersEdit', {
-    url: '/users/:id/edit',
+    url: '/profile/edit',
     templateUrl: '/templates/usersEdit.html',
     controller: 'UsersEditController as usersEdit'
   })
@@ -28,7 +27,22 @@ function Router($stateProvider, $urlRouterProvider) {
     url: '/login',
     templateUrl: '/templates/login.html',
     controller: 'LoginController as login'
+  })
+  .state('spacesIndex', {
+    url: '/spaces',
+    templateUrl: '/templates/spacesIndex.html',
+    controller: 'SpacesIndexController as spacesIndex'
+  })
+  .state('spacesShow', {
+    url: '/spaces/:id',
+    templateUrl: '/templates/spacesShow.html',
+    controller: 'SpacesShowController as show'
+  })
+  .state('spacesEdit', {
+    url: '/spaces/:id/edit',
+    templateUrl: '/templates/spacesEdit.html',
+    controller: 'SpacesEditController as spacesEdit'
   });
 
-  $urlRouterProvider.otherwise('/users');
+  $urlRouterProvider.otherwise('/');
 }

@@ -1,0 +1,7 @@
+<h1>Profile</h1>
+<!-- {{show.user}} -->
+<h1>{{ userProfile.user.username }}</h1>
+<div ng-controller="MainController as main">
+<button ng-if="main.isLoggedIn()" ui-sref="usersEdit({ id: userProfile.user.id })" class="button">Edit</button>
+<button ng-if="main.isLoggedIn()" ng-click="userProfile.delete()">Delete</button>
+</div>
