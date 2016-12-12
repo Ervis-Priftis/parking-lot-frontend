@@ -19,11 +19,11 @@ function UserProfileController(User, $state , $auth) {
   userProfile.isLoggedIn = $auth.isAuthenticated;
 }
 
-UserEditController.$inject = ['User', '$state'];
-function UserEditController(User, $state) {
+UserEditController.$inject = ['User', '$state', '$auth'];
+function UserEditController(User, $state, $auth) {
   const userEdit = this;
 
-  userEdit.user = User.get($state.params);
+  userEdit.user = User.get({ id: $auth.getPayload().id });
 
   function update() {
     userEdit.user.$update(() => {

@@ -11,14 +11,15 @@ function SpacesIndexController(Space) {
   spacesIndex.all = Space.query();
 }
 
-SpacesNewController.$inject = ['Space', '$state'];
-function SpacesNewController(Space, $state) {
+SpacesNewController.$inject = ['Space', '$state', '$auth'];
+function SpacesNewController(Space, $state, $auth) {
   const spacesNew = this;
 
-  spacesNew.space = {};
+  spacesNew.spaces = {};
+  spacesNew.spaces.user_id = $auth.getPayload().id;
 
   function create() {
-    Space.save(spacesNew.space, () => {
+    Space.save(spacesNew.spaces, () => {
       $state.go('spacesIndex');
     });
   }
@@ -33,7 +34,6 @@ function SpacesShowController(Space, $state , $auth) {
   spacesShow.space = Space.get($state.params);
 
   function deleteSpace() {
-    // console.log('I\'m trying to delete a space...');
     spacesShow.space.$remove(() => {
       $state.go('spacesIndex');
     });
@@ -43,16 +43,20 @@ function SpacesShowController(Space, $state , $auth) {
   spacesShow.isLoggedIn = $auth.isAuthenticated;
 }
 
-SpacesEditController.$inject = ['Space', '$state'];
-function SpacesEditController(Space, $state) {
+SpacesEditController.$inject = ['Space', '$state', '$auth'];
+function SpacesEditController(Space, $state, $auth) {
   const spacesEdit = this;
 
-  spacesEdit.space = Space.get($state.params);
+  spacesEdit.spaces = Space.get($state.params);
+  spacesEdit.spaces.user_id = $auth.getPayload().id;
 
   function update() {
     spacesEdit.space.$update(() => {
       $state.go('spacesShow', $state.params);
     });
+    // Space.update($state.params, spacesEdit.space, (res) => {
+    //   console.log(res);
+    // });
   }
 
   this.update = update;

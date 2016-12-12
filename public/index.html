@@ -5,17 +5,12 @@
   <title>Parking Lot</title>
   <link rel="stylesheet" href="/css/vendor.css">
   <link rel="stylesheet" href="/css/style.css">
-  <script src="/js/vendor.js" charset="utf-8"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5p7q8Ryzq-b1m8hPfLttH0nYSQx_hLRk&libraries=places" charset="utf-8"></script>
-  <!-- <script src="js/directives/googleMap.js" charset="utf-8"></script> -->
+  <script src="/js/vendor.js" charset="utf-8"></script>
   <script src="/js/app.js" charset="utf-8"></script>
 </head>
 <body ng-controller="MainController as main">
   <ul>
-
-    <!-- <button type="button" ui-sref="login" ng-if="!main.isLoggedIn()">Login</button> -->
-    
-    <button type="button" ui-sref="register" ng-if="!main.isLoggedIn()">Register</button>
 
     <button type="button" ng-if="main.isLoggedIn()" ui-sref-active="active" ng-click="main.logout()">Logout</button>
 

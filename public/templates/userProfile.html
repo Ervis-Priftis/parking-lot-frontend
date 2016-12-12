@@ -2,6 +2,10 @@
 <!-- {{show.user}} -->
 <h1>{{ userProfile.user.username }}</h1>
 <div ng-controller="MainController as main">
-<button ng-if="main.isLoggedIn()" ui-sref="usersEdit({ id: userProfile.user.id })" class="button">Edit</button>
-<button ng-if="main.isLoggedIn()" ng-click="userProfile.delete()">Delete</button>
+  <button ng-if="main.isLoggedIn()" ui-sref="usersEdit({ id: userProfile.user.id })" class="button">Edit</button>
+  <!-- <button ng-if="main.isLoggedIn()" ng-click="userProfile.delete()">Delete</button> -->
+
+  <button type="button" ui-sref="spacesAdd">Add</button>
+  <button type="button" ui-sref="spacesEdit">Edit</button>
+  {{ userProfile }}
 </div>

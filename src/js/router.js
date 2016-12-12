@@ -15,8 +15,8 @@ function Router($stateProvider, $urlRouterProvider) {
   })
   .state('usersEdit', {
     url: '/profile/edit',
-    templateUrl: '/templates/usersEdit.html',
-    controller: 'UsersEditController as usersEdit'
+    templateUrl: '/templates/userEdit.html',
+    controller: 'UserEditController as userEdit'
   })
   .state('register', {
     url: '/register',
@@ -33,16 +33,22 @@ function Router($stateProvider, $urlRouterProvider) {
     templateUrl: '/templates/spacesIndex.html',
     controller: 'SpacesIndexController as spacesIndex'
   })
-  .state('spacesShow', {
-    url: '/spaces/:id',
-    templateUrl: '/templates/spacesShow.html',
-    controller: 'SpacesShowController as show'
+  .state('spacesAdd', {
+    url: '/spaces/add',
+    templateUrl: '/templates/spacesAdd.html',
+    controller: 'SpacesNewController as spacesNew'
   })
   .state('spacesEdit', {
     url: '/spaces/:id/edit',
     templateUrl: '/templates/spacesEdit.html',
     controller: 'SpacesEditController as spacesEdit'
-  });
+  })
+  // .state('spacesShow', {
+  //   url: '/spaces/Show',
+  //   templateUrl: '/templates/spacesShow.html',
+  //   controller: 'spacesShowController as spacesShow'
+  // })
+  ;
 
   $urlRouterProvider.otherwise('/');
 }

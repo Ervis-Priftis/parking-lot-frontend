@@ -1,0 +1,33 @@
+<h1>Edit Space</h1>
+<form novalidate ng-submit="spacesEdit.update()">
+  <div>
+    <label>Lat</label>
+    <input type="text" placeholder="lat" ng-model="spacesEdit.spaces.lat">
+  </div>
+  <div>
+    <label>Lng</label>
+    <input type="text" placeholder="lnt" ng-model="spacesEdit.spaces.lng">
+  </div>
+  <div>
+    <label>Image</label>
+    <input type="text" placeholder="image" ng-model="spacesEdit.spaces.image">
+  </div>
+  <div>
+    <label>Width</label>
+    <input type="text" placeholder="width" ng-model="spacesEdit.spaces.width">
+  </div>
+  <div>
+    <label>Length</label>
+    <input type="text" placeholder="length" ng-model="spacesEdit.spaces.length">
+  </div>
+  <div>
+    <label>Details</label>
+    <input type="text" placeholder="image" ng-model="spacesEdit.spaces.details">
+  </div>
+  <div>
+    <label>User</label>
+    <input type="text" placeholder="user" ng-model="spacesEdit.spaces.user_id">
+  </div>
+  <button>Submit</button>
+  {{ spacesEdit.spaces }}
+</form>

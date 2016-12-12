@@ -1,13 +1,15 @@
 <section>
   <h1>Space Index</h1>
+  <google-map center="{ lat: 51.515233, lng: -0.072434}"></google-map>
   <ul>
     <li ng-repeat="space in spacesIndex.all">
-        <p>{{ space.id }}</p>
-        <p>{{ space.lat }}</p>
-        <p>{{ space.lng }}</p>
-        <p>{{ space.width }}</p>
-        <p>{{ space.length }}</p>
-        <p>{{ space.details }}</p>
+      <p>{{ space.id }}</p>
+      <p>{{ space.lat }}</p>
+      <p>{{ space.lng }}</p>
+      <img width="150px" src=" {{ space.image }}"></img>
+      <p>{{ space.width }}</p>
+      <p>{{ space.length }}</p>
+      <p>{{ space.details }}</p>
     </li>
   </ul>
 </section>
