@@ -43,20 +43,16 @@ function SpacesShowController(Space, $state , $auth) {
   spacesShow.isLoggedIn = $auth.isAuthenticated;
 }
 
-SpacesEditController.$inject = ['Space', '$state', '$auth'];
-function SpacesEditController(Space, $state, $auth) {
+SpacesEditController.$inject = ['Space', '$state'];
+function SpacesEditController(Space, $state) {
   const spacesEdit = this;
 
-  spacesEdit.spaces = Space.get($state.params);
-  spacesEdit.spaces.user_id = $auth.getPayload().id;
+  spacesEdit.space = Space.get($state.params);
 
   function update() {
     spacesEdit.space.$update(() => {
-      $state.go('spacesShow', $state.params);
+      $state.go('spacesIndex');
     });
-    // Space.update($state.params, spacesEdit.space, (res) => {
-    //   console.log(res);
-    // });
   }
 
   this.update = update;

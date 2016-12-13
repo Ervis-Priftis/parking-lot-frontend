@@ -1,33 +1,29 @@
 <h1>Edit Space</h1>
 <form novalidate ng-submit="spacesEdit.update()">
   <div>
-    <label>Lat</label>
-    <input type="text" placeholder="lat" ng-model="spacesEdit.spaces.lat">
+    <label>Name</label>
+    <input type="text" placeholder="name" ng-model="spacesEdit.space.name">
   </div>
   <div>
-    <label>Lng</label>
-    <input type="text" placeholder="lnt" ng-model="spacesEdit.spaces.lng">
+    <label>Address</label>
+    <input type="text" ng-model="spacesEdit.space.address" googleplace spaces="spacesEdit.space" lat="spacesEdit.space.lat" lng="spacesEdit.space.lng">
   </div>
   <div>
     <label>Image</label>
-    <input type="text" placeholder="image" ng-model="spacesEdit.spaces.image">
+    <input type="text" placeholder="image" ng-model="spacesEdit.space.image">
   </div>
   <div>
     <label>Width</label>
-    <input type="text" placeholder="width" ng-model="spacesEdit.spaces.width">
+    <input type="text" placeholder="width" ng-model="spacesEdit.space.width">
   </div>
   <div>
     <label>Length</label>
-    <input type="text" placeholder="length" ng-model="spacesEdit.spaces.length">
+    <input type="text" placeholder="length" ng-model="spacesEdit.space.length">
   </div>
   <div>
     <label>Details</label>
-    <input type="text" placeholder="image" ng-model="spacesEdit.spaces.details">
-  </div>
-  <div>
-    <label>User</label>
-    <input type="text" placeholder="user" ng-model="spacesEdit.spaces.user_id">
+    <input type="text" placeholder="image" ng-model="spacesEdit.space.details">
   </div>
   <button>Submit</button>
-  {{ spacesEdit.spaces }}
+  {{ spacesEdit.space }}
 </form>

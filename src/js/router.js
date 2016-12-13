@@ -43,12 +43,11 @@ function Router($stateProvider, $urlRouterProvider) {
     templateUrl: '/templates/spacesEdit.html',
     controller: 'SpacesEditController as spacesEdit'
   })
-  // .state('spacesShow', {
-  //   url: '/spaces/Show',
-  //   templateUrl: '/templates/spacesShow.html',
-  //   controller: 'spacesShowController as spacesShow'
-  // })
-  ;
+  .state('spacesShow', {
+    url: '/spaces/Show',
+    templateUrl: '/templates/spacesShow.html',
+    controller: 'UserProfileController as userProfile'
+  });
 
   $urlRouterProvider.otherwise('/');
 }

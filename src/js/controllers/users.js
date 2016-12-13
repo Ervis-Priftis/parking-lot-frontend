@@ -14,7 +14,7 @@ function UserProfileController(User, $state , $auth) {
       $state.go('home');
     });
   }
-
+  // userProfile.spaces = userProfile.user.space_ids;
   userProfile.delete = deleteUser;
   userProfile.isLoggedIn = $auth.isAuthenticated;
 }
