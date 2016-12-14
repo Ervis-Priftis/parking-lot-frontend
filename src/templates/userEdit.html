@@ -1,6 +1,6 @@
 <section class="row">
   <form ng-submit="userEdit.update()">
-    <img ng-src="{{userEdit.user.image}}">
+    <img width="150px" ng-src="{{userEdit.user.image}}">
     <div class="twelve columns">
       <label>Image</label>
       <input type="text" name="title" placeholder="image" ng-model="userEdit.user.image" class="u-full-width">
@@ -14,6 +14,6 @@
       <input type="text" name="email" placeholder="email" ng-model="userEdit.user.email" class="u-full-width">
     </div>
     <button>Update</button>
-    {{ userEdit.user.email }}
+    <!-- {{ userEdit.user.email }} -->
   </form>
 </section>

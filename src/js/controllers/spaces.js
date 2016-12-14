@@ -27,14 +27,14 @@ function SpacesNewController(Space, $state, $auth) {
   spacesNew.create = create;
 }
 
-SpacesShowController.$inject = ['Space', '$state', '$auth'];
-function SpacesShowController(Space, $state , $auth) {
+SpacesShowController.$inject = ['Space', 'User', '$state', '$auth'];
+function SpacesShowController(Space, User, $state , $auth) {
   const spacesShow = this;
 
-  spacesShow.space = Space.get($state.params);
+  spacesShow.user = User.get({id: $auth.getPayload().id});
 
-  function deleteSpace() {
-    spacesShow.space.$remove(() => {
+  function deleteSpace(space) {
+    Space.remove({id: space.id}, () => {
       $state.go('spacesIndex');
     });
   }

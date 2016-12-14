@@ -1,8 +1,10 @@
-<section>
-  <h1>Parking Lot</h1>
-  <button type="button" ui-sref="userProfile">I have a parking Space</button>
-  <br>
-  <button type="button" ui-sref="spacesIndex">I need a parking Space</button>
-  <br>
-  <button type="button" ui-sref="register" ng-if="!main.isLoggedIn()">Register</button>
-</section>
+<h1>Parking Lot</h1>
+<div class="container">
+  <div class="row">
+    <button class="col-xs-3" type="button" ui-sref="userProfile">I have a parking Space</button>
+
+    <button class="col-xs-3" type="button" ui-sref="spacesIndex">I need a parking Space</button>
+
+    <button class="col-xs-3" type="button" ui-sref="register" ng-if="!main.isLoggedIn()">Register</button>
+  </div>
+</div>

@@ -1,14 +1,13 @@
 <h1>Profile</h1>
-<!-- {{show.user}} -->
-<img ng-src="{{userProfile.user.image}}">
+<img width="150px" ng-src="{{userProfile.user.image}}">
 <h1>{{ userProfile.user.username }}</h1>
-<!-- <img width="150px" src=" {{ users.image }}"></img> -->
 <div ng-controller="MainController as main">
   <button ng-if="main.isLoggedIn()" ui-sref="usersEdit({ id: userProfile.user.id })" class="button">Edit</button>
-  <!-- <button ng-if="main.isLoggedIn()" ng-click="userProfile.delete()">Delete</button> -->
-
   <button type="button" ui-sref="spacesAdd">Add</button>
   <button type="button" ui-sref="spacesShow">Show Spaces</button>
-  <!-- {{ userProfile }} -->
+  <button type="button" ng-if="main.isLoggedIn()" ui-sref-active="active" ng-click="main.logout()">Logout</button>
+  <!-- <button ng-if="main.isLoggedIn()" ng-click="userProfile.delete()">Delete</button> -->
 
+  <!-- {{show.user}} -->
+  <!-- {{ userProfile }} -->
 </div>

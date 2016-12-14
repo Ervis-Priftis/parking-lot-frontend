@@ -44,9 +44,9 @@ function Router($stateProvider, $urlRouterProvider) {
     controller: 'SpacesEditController as spacesEdit'
   })
   .state('spacesShow', {
-    url: '/spaces/Show',
+    url: '/spaces/show',
     templateUrl: '/templates/spacesShow.html',
-    controller: 'UserProfileController as userProfile'
+    controller: 'SpacesShowController as spacesShow'
   });
 
   $urlRouterProvider.otherwise('/');

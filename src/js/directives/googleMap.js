@@ -23,6 +23,9 @@ function googleMap($window) {
       });
 
       let markers = [];
+      // let allInfoWindows = [];
+      let infoWindow = null;
+
       function clearMarkers() {
         markers.forEach((marker) => {
           marker.setMap(null);
@@ -43,6 +46,25 @@ function googleMap($window) {
                 animation: $window.google.maps.Animation.DROP
               });
               markers.push(marker);
+
+
+              // let allInfoWindows = [];
+              marker.addListener('click', () => {
+                if(infoWindow) {
+                  infoWindow.close();
+                }
+
+                const contentString = `
+                <p>Contact: <a href="mailto:${space.user.email}?subject=Query about your parking space">${space.user.email}</a></p>
+                <p>${space.details}</p>
+                <img src=${space.image}>`;
+
+                infoWindow = new $window.google.maps.InfoWindow({
+                  content: contentString
+                });
+
+                infoWindow.open(map, marker);
+              });
             }
           });
         }
@@ -50,19 +72,6 @@ function googleMap($window) {
     }
   };
 }
-
-
-// marker.addListener('click', () => {
-//   infoWindow.open(map, marker);
-//   markers.push(marker);
-//
-// const contentString = `
-// <p>Value: ${space.image}</p>
-// <p>Earliest Pickup: ${userEdit.user.email}</p>
-// `;
-// const infoWindow = new $window.google.maps.InfoWindow({
-//   content: contentString
-// });
 
 
 // Autocomplete BELOW
