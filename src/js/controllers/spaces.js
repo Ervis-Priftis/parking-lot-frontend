@@ -35,7 +35,7 @@ function SpacesShowController(Space, User, $state , $auth) {
 
   function deleteSpace(space) {
     Space.remove({id: space.id}, () => {
-      $state.go('spacesIndex');
+      $state.reload();
     });
   }
 
@@ -51,7 +51,7 @@ function SpacesEditController(Space, $state) {
 
   function update() {
     spacesEdit.space.$update(() => {
-      $state.go('spacesIndex');
+      $state.go('spacesShow');
     });
   }
 

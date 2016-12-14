@@ -1,7 +1,10 @@
+<h2>Your Space List</h2>
 <ul class="spaces">
   <li ng-repeat="space in spacesShow.user.spaces">
-    {{ space.name }}
-    <button ng-if="main.isLoggedIn()" ui-sref="spacesEdit({id: space.id})">Edit</button>
-    <button ng-if="main.isLoggedIn()" ng-click="spacesShow.delete(space)">Delete</button>
+    <h4>{{ space.name }}</h4>
+    <button ng-if="main.isLoggedIn()" ui-sref="spacesEdit({id: space.id})" class="u-full-width">Edit</button>
+    <button ng-if="main.isLoggedIn()" ng-click="spacesShow.delete(space)" class="u-full-width">Delete</button>
   </li>
 </ul>
+<button type="button" ui-sref="userProfile" class="u-full-width">My Profile</button>
+<button type="button" ui-sref="spacesIndex" class="u-full-width">Show spaces</button>

@@ -13,13 +13,152 @@ function googleMap($window) {
       spaces: '='
     },
     link: function($scope, element) {
+
       const map = new $window.google.maps.Map(element[0], {
         center: {
           lat: 51.508530,
           lng: -0.076132
         },
         zoom: 9,
-        scrollwheel: false
+        scrollwheel: false,
+        styles: [
+          {
+            'elementType': 'geometry',
+            'stylers': [
+              {
+                'hue': '#ff4400'
+              },
+              {
+                'saturation': -68
+              },
+              {
+                'lightness': -4
+              },
+              {
+                'gamma': 0.72
+              }
+            ]
+          },
+          {
+            'featureType': 'road',
+            'elementType': 'labels.icon'
+          },
+          {
+            'featureType': 'landscape.man_made',
+            'elementType': 'geometry',
+            'stylers': [
+              {
+                'hue': '#0077ff'
+              },
+              {
+                'gamma': 3.1
+              }
+            ]
+          },
+          {
+            'featureType': 'water',
+            'stylers': [
+              {
+                'hue': '#00ccff'
+              },
+              {
+                'gamma': 0.44
+              },
+              {
+                'saturation': -33
+              }
+            ]
+          },
+          {
+            'featureType': 'poi.park',
+            'stylers': [
+              {
+                'hue': '#44ff00'
+              },
+              {
+                'saturation': -23
+              }
+            ]
+          },
+          {
+            'featureType': 'water',
+            'elementType': 'labels.text.fill',
+            'stylers': [
+              {
+                'hue': '#007fff'
+              },
+              {
+                'gamma': 0.77
+              },
+              {
+                'saturation': 65
+              },
+              {
+                'lightness': 99
+              }
+            ]
+          },
+          {
+            'featureType': 'water',
+            'elementType': 'labels.text.stroke',
+            'stylers': [
+              {
+                'gamma': 0.11
+              },
+              {
+                'weight': 5.6
+              },
+              {
+                'saturation': 99
+              },
+              {
+                'hue': '#0091ff'
+              },
+              {
+                'lightness': -86
+              }
+            ]
+          },
+          {
+            'featureType': 'transit.line',
+            'elementType': 'geometry',
+            'stylers': [
+              {
+                'lightness': -48
+              },
+              {
+                'hue': '#ff5e00'
+              },
+              {
+                'gamma': 1.2
+              },
+              {
+                'saturation': -23
+              }
+            ]
+          },
+          {
+            'featureType': 'transit',
+            'elementType': 'labels.text.stroke',
+            'stylers': [
+              {
+                'saturation': -64
+              },
+              {
+                'hue': '#ff9100'
+              },
+              {
+                'lightness': 16
+              },
+              {
+                'gamma': 0.47
+              },
+              {
+                'weight': 2.7
+              }
+            ]
+          }
+        ]
       });
 
       let markers = [];
@@ -51,9 +190,11 @@ function googleMap($window) {
                 }
 
                 const contentString = `
-                <p>Contact: <a href="mailto:${space.user.email}?subject=Query about your parking space">${space.user.email}</a></p>
-                <p>${space.details}</p>
-                <img src=${space.image}>`;
+                <div class="container">
+                  <h3>Contact: <a href="mailto:${space.user.email}?subject=Query about your parking space">${space.user.email}</a></h3>
+                  <p>${space.details}</p>
+                  <img class="parking-photo" src=${space.image}>
+                </div>`;
 
                 infoWindow = new $window.google.maps.InfoWindow({
                   content: contentString

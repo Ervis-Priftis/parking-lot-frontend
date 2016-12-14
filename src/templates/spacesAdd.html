@@ -1,12 +1,13 @@
-<h1>Space Add</h1>
 <form novalidate ng-submit="spacesNew.create()">
+  <h1>Add Space</h1>
   <div>
     <label>Name</label>
-    <input type="text" placeholder="name" ng-model="spacesNew.space.name" class="u-full-width">
+    <input type="text" placeholder="name" ng-model="spacesNew.spaces.name" class="u-full-width">
   </div>
   <div>
     <label>Address</label>
-    <input type="text" ng-model="spacesAdd.spaces.address" googleplace spaces="spacesNew.spaces" lat="spacesAdd.spaces.lat" lng="spacesAdd.spaces.lng" class="u-full-width">
+    <!-- <input type="text" ng-model="spacesAdd.spaces.address" googleplace spaces="spacesNew.spaces" lat="spacesAdd.spaces.lat" lng="spacesAdd.spaces.lng" class="u-full-width"> -->
+    <input type="text" ng-model="spacesAdd.spaces.address" googleplace spaces="spacesNew.spaces" class="u-full-width">
   </div>
   <div>
     <label>Image</label>
@@ -24,6 +25,6 @@
     <label>Details</label>
     <input type="text" placeholder="image" ng-model="spacesNew.spaces.details" class="u-full-width">
   </div>
-    <button class="u-full-width">Create</button>
+    <button class="u-full-width">Submit</button>
     <button type="button" ui-sref="userProfile" class="u-full-width">My Profile</button>
 </form>

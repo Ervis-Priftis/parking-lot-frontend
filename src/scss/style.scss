@@ -4,6 +4,10 @@
   margin-bottom: 20px;
 }
 
+img.parking-photo {
+  width: 200px;
+}
+
 $blue: #21cfc9;
 
 body {
@@ -28,6 +32,11 @@ h2 {
 
 h3 {
   font-size: 26px;
+  border-bottom: 1.9px solid #bbb;
+  border-left: 1.9px solid #bbb;
+  border-right: 1.9px solid #bbb;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 
 nav {
@@ -46,7 +55,15 @@ nav {
 }
 
 img.logo {
-  width: 120px;
+  width: 300px;
+  margin: 40px 0;
+  border: 1px solid #bbbbbb;
+  border-radius: 39px;
+}
+
+img.profileImage {
+  width: 150px;
+  border-radius: 100px;
 }
 
 button {
