@@ -1,14 +1,12 @@
-<section>
-  <h1>Login Here</h1>
-  <form novalidate ng-submit="login.submit()">
-    <div>
-      <label>Email</label>
-      <input type="email" placeholder="Email" ng-model="login.credentials.email">
-    </div>
-    <div>
-      <label>Password</label>
-      <input type="password" placeholder="Password" ng-model="login.credentials.password">
-    </div>
-
-    <button>Submit</button>
-</section>
+<h2>Login Here</h2>
+<form novalidate ng-submit="login.submit()">
+  <div>
+    <label>Email</label>
+    <input type="email" placeholder="Email" ng-model="login.credentials.email" class="u-full-width">
+  </div>
+  <div>
+    <label>Password</label>
+    <input type="password" placeholder="Password" ng-model="login.credentials.password" class="u-full-width">
+  </div>
+  <button class="u-full-width">Submit</button>
+</form>

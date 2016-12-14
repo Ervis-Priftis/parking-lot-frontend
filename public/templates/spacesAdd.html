@@ -2,32 +2,28 @@
 <form novalidate ng-submit="spacesNew.create()">
   <div>
     <label>Name</label>
-    <input type="text" placeholder="name" ng-model="spacesEdit.space.name">
+    <input type="text" placeholder="name" ng-model="spacesNew.space.name" class="u-full-width">
   </div>
   <div>
     <label>Address</label>
-    <input type="text" ng-model="spacesAdd.spaces.address" googleplace spaces="spacesNew.spaces" lat="spacesAdd.spaces.lat" lng="spacesAdd.spaces.lng">
+    <input type="text" ng-model="spacesAdd.spaces.address" googleplace spaces="spacesNew.spaces" lat="spacesAdd.spaces.lat" lng="spacesAdd.spaces.lng" class="u-full-width">
   </div>
   <div>
     <label>Image</label>
-    <input type="text" placeholder="image" ng-model="spacesNew.spaces.image">
+    <input type="text" placeholder="image" ng-model="spacesNew.spaces.image" class="u-full-width">
   </div>
   <div>
     <label>Width</label>
-    <input type="text" placeholder="width" ng-model="spacesNew.spaces.width">
+    <input type="text" placeholder="width" ng-model="spacesNew.spaces.width" class="u-full-width">
   </div>
   <div>
     <label>Length</label>
-    <input type="text" placeholder="length" ng-model="spacesNew.spaces.length">
+    <input type="text" placeholder="length" ng-model="spacesNew.spaces.length" class="u-full-width">
   </div>
   <div>
     <label>Details</label>
-    <input type="text" placeholder="image" ng-model="spacesNew.spaces.details">
+    <input type="text" placeholder="image" ng-model="spacesNew.spaces.details" class="u-full-width">
   </div>
-
-  {{ spacesNew.spaces }}
-  {{ spacesAdd.spaces.lat }}
-  {{ spacesAdd.spaces.lng }}
-  {{ spacesAdd.spaces.address }}
-  <button>Create</button>
+    <button class="u-full-width">Create</button>
+    <button type="button" ui-sref="userProfile" class="u-full-width">My Profile</button>
 </form>

@@ -1,6 +1,7 @@
-<ul>
+<ul class="spaces">
   <li ng-repeat="space in spacesShow.user.spaces">
-    {{ space.name }} <a ui-sref="spacesEdit({id: space.id})">Edit this space</a>
+    {{ space.name }}
+    <button ng-if="main.isLoggedIn()" ui-sref="spacesEdit({id: space.id})">Edit</button>
     <button ng-if="main.isLoggedIn()" ng-click="spacesShow.delete(space)">Delete</button>
   </li>
 </ul>

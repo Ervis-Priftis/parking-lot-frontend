@@ -2,30 +2,18 @@ angular.module('finalProject')
   .controller('UserProfileController', UserProfileController)
   .controller('UserEditController', UserEditController);
 
-UserProfileController.$inject = ['User', '$state', '$auth', 'Space'];
-function UserProfileController(User, $state , $auth, Space) {
+UserProfileController.$inject = ['User', '$state', '$auth'];
+function UserProfileController(User, $state , $auth) {
   const userProfile = this;
 
-  // userProfile.spaces = [];
-  // userProfile.space = User.get({id: $auth.getPayload().id}), ((user) => {
-  //   user.space_ids.forEach((space) =>{
-  //     userProfile.spaces.push(space);
-  //   });
-  //   userProfile.spaces = user;
-  //
-  // });
-  // userProfile.space_ids = User.get({id: $auth.getPayload().id});
-
-  // userProfile.space = Space.get({id: $auth.getPayload().id});
   userProfile.user = User.get({id: $auth.getPayload().id});
 
   function deleteUser() {
-    // console.log('I\'m trying to delete a user...');
     userProfile.user.$remove(() => {
       $state.go('home');
     });
   }
-  // userProfile.spaces = userProfile.user.space_ids;
+
   userProfile.delete = deleteUser;
   userProfile.isLoggedIn = $auth.isAuthenticated;
 }

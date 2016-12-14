@@ -22,6 +22,8 @@ function MainController($auth, $state, $rootScope) {
   function secureState(e, toState, toParams, fromState) {
     main.message = null;
 
+    main.containerClass = toState.name !== 'spacesIndex' ? true : false;
+
     if($auth.isAuthenticated() && attemptedRoute === 'spacesIndex' && toState.name === 'userProfile') {
       e.preventDefault();
       $state.go(attemptedRoute);

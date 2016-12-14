@@ -18,7 +18,7 @@ function googleMap($window) {
           lat: 51.508530,
           lng: -0.076132
         },
-        zoom: 10,
+        zoom: 9,
         scrollwheel: false
       });
 
@@ -45,10 +45,6 @@ function googleMap($window) {
                 map: map,
                 animation: $window.google.maps.Animation.DROP
               });
-              markers.push(marker);
-
-
-              // let allInfoWindows = [];
               marker.addListener('click', () => {
                 if(infoWindow) {
                   infoWindow.close();
@@ -64,6 +60,7 @@ function googleMap($window) {
                 });
 
                 infoWindow.open(map, marker);
+                markers.push(marker);
               });
             }
           });

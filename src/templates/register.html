@@ -1,25 +1,26 @@
 <form novalidate ng-submit="register.submit()">
-  <h1>Register Here</h1>
+  <h2>Register Here</h2>
   <div>
     <label>Username</label>
-    <input type="text" placeholder="Username" ng-model="register.user.username">
+    <input type="text" placeholder="Username" ng-model="register.user.username" class="u-full-width">
   </div>
   <div>
     <label>Image</label>
+    <!-- <input type="text" name="title" placeholder="image" ng-model="userEdit.user.image" class="u-full-width"> -->
     <input type="text" name="title" placeholder="image" ng-model="register.user.image" class="u-full-width">
   </div>
   <div>
     <label>Email</label>
-    <input type="email" placeholder="Email" ng-model="register.user.email">
+    <input type="email" placeholder="Email" ng-model="register.user.email" class="u-full-width">
   </div>
   <div>
     <label>Password</label>
-    <input type="password" placeholder="Password" ng-model="register.user.password">
+    <input type="password" placeholder="Password" ng-model="register.user.password" class="u-full-width">
   </div>
   <div>
     <label>Password Confirmation</label>
-    <input type="password" placeholder="Password Confirmation" ng-model="register.user.password_confirmation">
+    <input type="password" placeholder="Password Confirmation" ng-model="register.user.password_confirmation" class="u-full-width">
   </div>
 
-  <button>Submit</button>
+  <button class="u-full-width">Submit</button>
 </form>
