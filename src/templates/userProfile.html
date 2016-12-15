@@ -1,10 +1,17 @@
 <div ng-controller="MainController as main">
   <h2>My Profile</h2>
+
   <img class="profileImage" ng-src="{{userProfile.user.image}}">
+
   <h3>{{ userProfile.user.username }}</h3>
+  
   <button type="button" ng-if="main.isLoggedIn()" ui-sref="usersEdit({ id: userProfile.user.id })" class="u-full-width">Edit profile</button>
+
   <button type="button" ui-sref="spacesAdd" class="u-full-width">Add space</button>
+
   <button type="button" ui-sref="spacesShow" class="u-full-width">Edit spaces</button>
+
   <button type="button" ui-sref="spacesIndex" class="u-full-width">Show spaces</button>
-  <button type="button" ng-if="main.isLoggedIn()" ui-sref-active="active" ng-click="main.logout()" class="u-full-width">Logout</button>
+
+  <button type="button" ng-if="main.isLoggedIn()" ui-sref-active="active" ng-click="main.logout()" class="button button-primary">Logout</button>
 </div>

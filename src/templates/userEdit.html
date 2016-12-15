@@ -1,17 +1,16 @@
 <form ng-submit="userEdit.update()">
   <h2>Edit Your Profile</h2>
+
   <img class="profileImage" ng-src="{{userEdit.user.image}}">
-  <div class="twelve columns">
-    <label>Image</label>
-    <input type="text" name="title" placeholder="image" ng-model="userEdit.user.image" class="u-full-width">
-  </div>
-  <div class="twelve columns">
-    <label>Name</label>
-    <input type="text" name="title" placeholder="name" ng-model="userEdit.user.username" class="u-full-width">
-  </div>
-  <div class="twelve columns">
-    <label>Email</label>
-    <input type="text" name="email" placeholder="email" ng-model="userEdit.user.email" class="u-full-width">
-  </div>
-  <button class="u-full-width">Submit</button>
+
+  <label>Image</label>
+  <input type="text" name="title" placeholder="image" ng-model="userEdit.user.image" class="u-full-width">
+
+  <label>Name</label>
+  <input type="text" name="title" placeholder="name" ng-model="userEdit.user.username" class="u-full-width">
+
+  <label>Email</label>
+  <input type="text" name="email" placeholder="email" ng-model="userEdit.user.email" class="u-full-width">
+
+  <button class="button button-primary">Submit</button>
 </form>

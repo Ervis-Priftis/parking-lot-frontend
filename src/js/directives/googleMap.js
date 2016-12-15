@@ -20,7 +20,10 @@ function googleMap($window) {
           lng: -0.076132
         },
         zoom: 9,
+        minZoom: 6, // Minimum zoom level allowed (0-20)
+        maxZoom: 17, // Maximum soom level allowed (0-20)
         scrollwheel: false,
+        mapTypeControl: false,
         styles: [
           {
             'elementType': 'geometry',
@@ -162,7 +165,6 @@ function googleMap($window) {
       });
 
       let markers = [];
-      // let allInfoWindows = [];
       let infoWindow = null;
 
       function clearMarkers() {
@@ -190,10 +192,12 @@ function googleMap($window) {
                 }
 
                 const contentString = `
-                <div class="container">
-                  <h3>Contact: <a href="mailto:${space.user.email}?subject=Query about your parking space">${space.user.email}</a></h3>
-                  <p>${space.details}</p>
-                  <img class="parking-photo" src=${space.image}>
+                <div class="infoWindow">
+                <h4 class="contact">Contact: <a href="mailto:${space.user.email}?subject=Query about your parking space">${space.user.email}</a></h4>
+                <h4 class="details">${space.details}</h4>
+                <h4 class="diameters">Width: ${space.width} m<br>
+                Length: ${space.length} m</h4>
+                <img class="parking-photo" src=${space.image} alt="Parking image missing">
                 </div>`;
 
                 infoWindow = new $window.google.maps.InfoWindow({
