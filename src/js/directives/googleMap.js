@@ -240,7 +240,7 @@ function googleplace($window) {
         scope.spaces.lat = latlng.lat;
         scope.spaces.lng = latlng.lng;
 
-        console.log(place);
+        // console.log(place);
         model.$setViewValue(element.val());
       });
     }
