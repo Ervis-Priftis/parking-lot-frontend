@@ -15,6 +15,12 @@
 //   height: 324px !important;
 // }
 
+// Navbar Style
+nav {
+  // width: 320px;
+}
+// Navbar Style end
+
 img.parking-photo {
   width: 260px;
   height: 170px;
@@ -114,7 +120,7 @@ h3 {
 nav {
   border-bottom: 1px solid #ececec;
   background-color: white;
-  padding: 10px 0;
+  padding: 7px 0;
   position: fixed;
   top: 0;
   right: 0;
@@ -126,17 +132,17 @@ nav {
   }
 }
 
-img.logo {
-  width: 240px;
-  margin: 40px 0;
-  box-shadow: 0 0 8px rgba(0,0,0,0.45);
-  border-radius: 39px;
+#logo {
+  // width: 650px;
+  margin: 10px 0;
+  box-shadow: 0 0 10px rgba(0,0,0,0.75);
+  border-radius: 15px;
 }
 
 img.profileImage {
   width: 150px;
   // border-radius: 100px;
-  border-radius: 30px 70px;
+  border-radius: 5px;
   box-shadow: 0 0 10px rgba(0,0,0,0.45);
 }
 
