@@ -16,12 +16,16 @@
 <body ng-controller="MainController as main">
 
     <!-- <button type="button" ng-if="main.isLoggedIn()" ui-sref-active="active" ng-click="main.logout()">Logout</button> -->
-    <nav>
+    <nav id="nav-bar">
       <div class="container">
         <h1 ui-sref="home">Parking Lot</h1>
       </div>
     </nav>
 
     <main ng-class="{'container': main.containerClass}" ui-view></main>
+
+    <footer id="footer" class="u-full-width">
+      <p>&copy; 2015-2016 Ervis Priftis</p>
+    </footer>
 </body>
 </html>

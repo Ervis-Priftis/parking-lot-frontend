@@ -1,3 +1,11 @@
+// Media Query
+  @media (max-width: 320px) {
+    #footer {
+      position: fixed;
+    }
+  }
+// end
+
 .google-map {
   width: 100%;
   height: calc(100vh - 143px);
@@ -17,7 +25,7 @@
 
 // Navbar Style
 nav {
-  // width: 320px;
+
 }
 // Navbar Style end
 
@@ -117,7 +125,7 @@ h3 {
   box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px;
 }
 
-nav {
+#nav-bar {
   border-bottom: 1px solid #ececec;
   background-color: white;
   padding: 7px 0;
@@ -133,7 +141,7 @@ nav {
 }
 
 #logo {
-  // width: 650px;
+  // height: 420px;
   margin: 10px 0;
   box-shadow: 0 0 10px rgba(0,0,0,0.75);
   border-radius: 15px;
@@ -141,7 +149,6 @@ nav {
 
 img.profileImage {
   width: 150px;
-  // border-radius: 100px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0,0,0,0.45);
 }
@@ -158,6 +165,18 @@ button {
   list-style: none;
 }
 
+
+// Footer Start
+#footer {
+  border-top: 1px solid #ececec;
+  background-color: white;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  text-align: center;
+  z-index: 1;
+}
+// Footer End
 
 // Sketelon overrides
 
